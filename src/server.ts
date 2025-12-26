@@ -18,7 +18,8 @@ const server = serve(
     fetch: app.fetch,
     // createServer: createSecureServer,
     // serverOptions: options,
-    port: 3000
+    port: process.env.PORT ? Number(process.env.PORT) : 3000,
+    hostname: "0.0.0.0"
   },
   info => {
     console.log(`Listening on HTTPS/2: http://localhost:${info.port}`);
